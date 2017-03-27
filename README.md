@@ -31,12 +31,24 @@ a better way of doing business.
 
 ##### Initialization
 Initialization has to be done before Jukko can be customized and launched. The method will
-need the API key and context. The API key can be generated in the dashboard after registration.
+need the API key. The API key can be generated in the dashboard after registration.
 You can register on [Jukko website](https://jukko.com).
 
 ```csharp
     JukkoSdk.Instance.Init ("YOUR_API_KEY");
 ```
+
+In case You are building application for both Android and iOS, You should get separate keys for each platform.
+Initialization will look like following:
+
+```csharp
+    #if UNITY_ANDROID
+    JukkoSdk.Instance.Init ("ANDROID_API_KEY");
+    #elif UNITY_IOS
+    JukkoSdk.Instance.Init ("IOS_API_KEY");
+    #endif
+```
+
 
 ##### Ad showing
 
