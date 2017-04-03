@@ -11,8 +11,8 @@ a better way of doing business.
 1. [Integration](#integration)
 2. [Usage](#usage)
     * [Initialization](#usage)
-    * [Ad showing](#ad-showing)
-    * [Frequnecy capping](#frequnecy-capping)
+    * [Showing an ad](#showing-an-ad)
+    * [Frequency capping](#frequency-capping)
     * [Console logging](#console-logging)
 3. [Android Specific information](#android-specific-information)
     * [Google Play Services](#google-play-services)
@@ -30,8 +30,8 @@ a better way of doing business.
 ### Usage
 
 ##### Initialization
-Initialization has to be done before Jukko can be customized and launched. The method will
-need the API key. The API key can be generated in the dashboard after registration.
+Initialization has to be done before Jukko SDK can be customized and launched. The method will
+need an API key. The API key can be generated in the dashboard after registration.
 You can register on [Jukko website](https://jukko.com).
 
 ```csharp
@@ -50,9 +50,9 @@ Initialization will look like following:
 ```
 
 
-##### Ad showing
+##### Showing an ad
 
-You can show an ad by calling `ShowAd ()` method:
+You can show an ad by calling `ShowAd ()` method of Jukko SDK:
 
 ```csharp
         JukkoSdk.Instance.ShowAd ((JukkoSdk.AdClosedEvent e) => {
@@ -60,32 +60,32 @@ You can show an ad by calling `ShowAd ()` method:
         });
 ```
 
-When ads activity is finished, `AdClosed` delegeate will be called. It will following information:
+When ad UI is closed, `AdClosed` delegeate will be called. It will contain thefollowing information:
 
-1. `Reason`: reason why ad was closed. Possible variants are:
-    * `ClosedByUser`: Ad view was closed by user interactions
-    * `Timeout`: Api servers were unresponsive
-    * `NetworkConnectivity`: Network connectivity problems
-    * `FrequencyCapping`: `ShowAd ()` called before frequency capping timeout ended
-    * `Error`: Unspecified error. Look at the `Message` property for description
-2. `Message`: string containing extended description of reason
-3. `Events`: list of events that happened with ad activity. May be empty. Each event contains:
-    * `timestamp` of the event (uses current timezone)
-    * `adEvent` type of event. Possible variants:
-        * `Launch`: Ad activity opened
-        * `Close`: Ad activity closed
-        * `IntroShown`: NPO campaign intro was shown to user
-        * `ProgressShown`: NPO campaign progress was shown to user
-        * `OutroShown`: NPO campaign outro was shown to user
-        * `AdShown`: Ad was shown to user
-        * `AdUrlOpened`: user clicked on url, that opened in external browser
+1. `Reason`: reason why the ad was closed. Possible values are:
+    * `ClosedByUser`: Ad view was closed by user interaction.
+    * `Timeout`: API servers were unresponsive.
+    * `NetworkConnectivity`: Network connectivity issue.
+    * `FrequencyCapping`: `ShowAd ()` called before frequency capping timeout ended.
+    * `Error`: Unspecified error. Look at the `Message` property for description.
+2. `Message`: string containing extended description of reason.
+3. `Events`: list of events that happened with ad UI. May be empty. Each event contains:
+    * `timestamp` of the event (uses current timezone).
+    * `adEvent` type of event. Possible values:
+        * `Launch`: Ad UI opened.
+        * `Close`: Ad UI closed.
+        * `IntroShown`: NPO campaign intro was shown to user.
+        * `ProgressShown`: NPO campaign progress was shown to user.
+        * `OutroShown`: NPO campaign outro was shown to user.
+        * `AdShown`: Ad was shown to user.
+        * `AdUrlOpened`: user clicked on URL, that was opened in external browser.
         * `Error`: Unspecified error.
 
 
 ##### Frequency capping
 
-Sdk allows developer to set frequency capping for ads. It counts time since last ad was closed
-and ignores `ShowAd ()` calls in frequency capping period. Frequency capping can be changed
+Jukko SDK allows developer to set frequency capping for ads. It counts time since the last time when an ad was closed
+and ignores `ShowAd ()` calls until frequency capping period ends. Frequency capping can be changed
 using:
 
 ```csharp
@@ -97,7 +97,7 @@ using:
 
 By default, Jukko SDK logs only important messages, like unrecoverable error reasons.
 
-You can enable debug logging by calling
+You can enable debug logging by calling:
 
 ```csharp
     JukkoSdk.Instance.DebugMode = true;
@@ -110,15 +110,13 @@ SDK will use native log messaging. Log messages will contain `Jukko SDK` tag.
 
 ##### Google Play Services
 
-If user have Google Play services on their devices, SDK will automatically use its
-Advertising ID (GAID) and Limit Ad Tracking information.
+If user has Google Play services on their devices, SDK will automatically use user's
+Advertising ID (GAID) and Limit Ad Tracking setting.
 
 For more information about Google Advertising ID visit [this link](https://play.google.com/about/monetization-ads/ads/ad-id/).
 
 ##### Requirements
 
-Jukko SDK support devices starting with Android 4.0 (API level 14).
-
-However, SDK won't do anything for Android prior to 4.4 (API level < 19) except log messages.
+Jukko SDK supports devices starting with Android 4.0 (API level 14). However, due to some older WebView version restrictions, ad UI won't be shown for Android prior to 4.4 (API level < 19) and SDK will only log some messages in console specifying this.
 
 ### iOS Specific information
