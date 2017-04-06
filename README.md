@@ -120,3 +120,24 @@ For more information about Google Advertising ID visit [this link](https://play.
 Jukko SDK supports devices starting with Android 4.0 (API level 14). However, due to some older WebView version restrictions, ad UI won't be shown for Android prior to 4.4 (API level < 19) and SDK will only log some messages in console specifying this.
 
 ### iOS Specific information
+
+##### Requirements
+Jukko SDK support devices starting with iOS 10.0.
+
+##### iOS Project configuration
+
+1. In Unity go to **File > Build Settings** and choose iOS from the list. Click `Build`. This will generate an iOS project that you need to open with Xcode. More information about this can be found in the Unity documentation.
+
+2. In Xcode go to Project **Settings > General > Linked Frameworks And Libraries** and remove any existing Jukko framework.
+
+3. In the Xcode file explorer, expand the files on the left to **Frameworks > Plugins > iOS**. Drag the JukkoFramework.framework into **Project Settings > General > Embedded Binaries** section. This will add it to **Linked Frameworks And Libraries** section as well (this is what we want).
+
+    ![](images/ios_drag_framework.png)
+
+4. Under the Build Settings find `Always Embed Swift Standard Libraries` (Xcode 8) and set it to Yes.
+
+    ![](images/ios_embed_libraries.png)
+
+5. Ensure that project's Deployment Target version is equal or above 10.0.
+
+6. Build and run the project on your device.
