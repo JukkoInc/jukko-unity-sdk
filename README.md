@@ -24,12 +24,15 @@ a better way of doing business.
     ![](images/asset-import-1.png)
 
 3. Check that all files and directories are selected and click **Import**:
-
+    
     ![](images/asset-import-2.png)
-
+    
     This operation should create 2 sub directories inside `Assets` folder:
-        * **JukkoSDK** - Jukko script files
-        * **Plugins** - rest of Jukko (native integration)  
+
+    *  **JukkoSDK** - Jukko script files
+
+    *  **Plugins** - rest of Jukko (native integration)  
+
 4. Use the Jukko framework in your project. Take a look at the `Assets/JukkoSDK/Jukko.cs` files to see available classes and interfaces and list of the supported methods. 
 
 ### Usage
