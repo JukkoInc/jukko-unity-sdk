@@ -13,18 +13,24 @@ If you have any questions during the integration process, you can reach us at [d
 and we'll get back to you ASAP. Thanks for joining our movement to create a better world and
 a better way of doing business.
 
-**Table of contents**
 
 
 [TOC]
 
 ### Integration
 1. **Download:** [Jukko Unity SDK](https://dl.jukko.com/unity/JukkoUnitySDK.unitypackage).
-2. Import `JukkoUnitySDK.unitypackage` file into your `Assets` directory in Unity (or open your project and double click the `JukkoUnitySDK.unitypackage` in file explorer). This should create 2 sub directories:
-    * **JukkoSDK** - Jukko script files
-    * **Plugins** - rest of Jukko (native integration)
+2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package... ** and select `JukkoUnitySDK.unitypackage` file:
 
-3. Use the Jukko framework in your project. Take a look at the `Assets/JukkoSDK/Jukko.cs` files to see available classes and interfaces and list of the supported methods. 
+    ![](images/asset-import-1.png)
+
+3. Check that all files and directories are selected and click **Import**:
+
+    ![](images/asset-import-2.png)
+
+    This operation should create 2 sub directories inside `Assets` folder:
+        * **JukkoSDK** - Jukko script files
+        * **Plugins** - rest of Jukko (native integration)  
+4. Use the Jukko framework in your project. Take a look at the `Assets/JukkoSDK/Jukko.cs` files to see available classes and interfaces and list of the supported methods. 
 
 ### Usage
 
