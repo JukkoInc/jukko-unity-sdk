@@ -1,23 +1,22 @@
-# Jukko SDK documentation
+> Jukko SDK documentation
+> ==============================
+
+
 
 Welcome to the Jukko developer SDK documentation. Follow our step-by-step instructions to
 integrate Jukko and start monetizing while converting your app into a catalyst for social
 impact today!
 
+
+
 If you have any questions during the integration process, you can reach us at [devs@jukko.com](mailto:devs@jukko.com)
 and we'll get back to you ASAP. Thanks for joining our movement to create a better world and
 a better way of doing business.
 
-1. [Integration](#integration)
-2. [Usage](#usage)
-    * [Initialization](#usage)
-    * [Showing an ad](#showing-an-ad)
-    * [Frequency capping](#frequency-capping)
-    * [Console logging](#console-logging)
-3. [Android Specific information](#android-specific-information)
-    * [Google Play Services](#google-play-services)
-    * [Requirements](#requirements)
-3. [iOS Specific information](#ios-specific-information)
+**Table of contents**
+
+
+[TOC]
 
 ### Integration
 1. **Download:** [Jukko Unity SDK](https://dl.jukko.com/unity/JukkoUnitySDK.unitypackage).
@@ -25,7 +24,7 @@ a better way of doing business.
     * **JukkoSDK** - Jukko script files
     * **Plugins** - rest of Jukko (native integration)
 
-3. Use the Jukko framework in your project. Take a look at the `JukkoUnitySDK/Jukko.cs` files to see available classes and interfaces and list of the supported methods. 
+3. Use the Jukko framework in your project. Take a look at the `Assets/JukkoSDK/Jukko.cs` files to see available classes and interfaces and list of the supported methods. 
 
 ### Usage
 
@@ -85,8 +84,7 @@ When ad UI is closed, `AdClosed` delegeate will be called. It will contain thefo
 ##### Frequency capping
 
 Jukko SDK allows developer to set frequency capping for ads. It counts time since the last time when an ad was closed
-and ignores `ShowAd ()` calls until frequency capping period ends. Frequency capping can be changed
-using:
+and ignores `ShowAd ()` calls until frequency capping period ends. Frequency capping can be changed using:
 
 ```csharp
     JukkoSdk.Instance.AdsFrequency = timeInSeconds;
