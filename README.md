@@ -13,7 +13,6 @@ If you have any questions during the integration process, you can reach us at [d
 and we'll get back to you ASAP. Thanks for joining our movement to create a better world and
 a better way of doing business.
 
-**Table of contents**
 
 
 [TOC]
@@ -23,6 +22,7 @@ a better way of doing business.
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package... ** and select `JukkoUnitySDK.unitypackage` file:
 
     ![](images/asset-import-1.png)
+    
 3. Check that all files and directories are selected and click **Import**:
 
     ![](images/asset-import-1.png)
