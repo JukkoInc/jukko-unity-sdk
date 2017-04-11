@@ -40,7 +40,7 @@ a better way of doing business.
 ##### Initialization
 Initialization has to be done before Jukko SDK can be customized and launched. The method will
 need an API key. The API key can be generated in the dashboard after registration.
-You can register on [Jukko website](https://dashboard.staging.jukko.com).
+You can register on the [Jukko dashboard](https://dashboard.staging.jukko.com).
 
 ```csharp
     JukkoSdk.Instance.Init ("YOUR_API_KEY");
