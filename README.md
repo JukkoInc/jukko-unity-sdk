@@ -27,13 +27,13 @@ a better way of doing business.
     
     ![](images/asset-import-2.png)
     
-    This operation should create 2 sub directories inside `Assets` folder:
+    This operation should create 2 subdirectories inside `Assets` folder:
 
     *  **JukkoSDK** - Jukko script files
 
     *  **Plugins** - rest of Jukko (native integration)  
 
-4. Use the Jukko framework in your project. Take a look at the `Assets/JukkoSDK/Jukko.cs` files to see available classes and interfaces and list of the supported methods. 
+4. Use the Jukko framework in your project. Take a look at the `Assets/JukkoSDK/Jukko.cs` files to see available classes and interfaces and a list of the supported methods. 
 
 ### Usage
 
@@ -68,7 +68,7 @@ You can show an ad by calling `ShowAd ()` method of Jukko SDK:
         });
 ```
 
-When ad UI is closed, `AdClosed` delegeate will be called. It will contain thefollowing information:
+When ad UI is closed, `AdClosed` delegate will be called. It will contain the following information:
 
 1. `Reason`: reason why the ad was closed. Possible values are:
     * `ClosedByUser`: Ad view was closed by user interaction.
