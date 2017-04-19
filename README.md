@@ -18,7 +18,7 @@ a better way of doing business.
 [TOC]
 
 ### Integration
-1. **Download:** [Jukko Unity SDK](https://dl.jukko.com/unity/JukkoUnitySDK.unitypackage).
+1. **Download:** [Jukko Unity SDK](https://dl.staging.jukko.com/unity/JukkoUnitySDK-0.1.2.unitypackage).
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package... ** and select `JukkoUnitySDK.unitypackage` file:
 
     ![](images/asset-import-1.png)
@@ -40,7 +40,7 @@ a better way of doing business.
 ##### Initialization
 Initialization has to be done before Jukko SDK can be customized and launched. The method will
 need an API key. The API key can be generated in the dashboard after registration.
-You can register on [Jukko website](https://jukko.com).
+You can register on the [Jukko dashboard](https://dashboard.staging.jukko.com).
 
 ```csharp
     JukkoSdk.Instance.Init ("YOUR_API_KEY");
