@@ -18,7 +18,7 @@ a better way of doing business.
 [TOC]
 
 ### Integration
-1. **Download:** [Jukko Unity SDK](https://dl.staging.jukko.com/unity/JukkoUnitySDK-0.1.2.unitypackage).
+1. **Download:** [Jukko Unity SDK](https://dl.staging.jukko.com/unity-sdk/JukkoUnitySDK-0.1.3.unitypackage).
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package... ** and select `JukkoUnitySDK.unitypackage` file:
 
     ![](images/asset-import-1.png)
