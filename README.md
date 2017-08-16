@@ -18,7 +18,7 @@ a better way of doing business.
 [TOC]
 
 ### Integration
-1. **Download:** [Jukko Unity SDK](https://dl.staging.jukko.com/unity-sdk/JukkoUnitySDK-1.0.0.unitypackage).
+1. **Download:** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.2.unitypackage).
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package... ** and select `JukkoUnitySDK.unitypackage` file:
 
     ![](images/asset-import-1.png)
@@ -63,7 +63,7 @@ Initialization will look like following:
 You can show an ad by calling `ShowAd ()` method of Jukko SDK:
 
 ```csharp
-        JukkoSdk.Instance.ShowAd ((JukkoSdk.AdClosedEvent e) => {
+        JukkoSdk.Instance.ShowAd ((AdClosedEvent e) => {
             //handle AdClosedEvent here
         });
 ```
@@ -124,7 +124,7 @@ For more information about Google Advertising ID visit [this link](https://play.
 
 ##### Requirements
 
-Jukko SDK supports devices starting with Android 4.0 (API level 14). However, due to some older WebView version restrictions, ad UI won't be shown for Android prior to 4.4 (API level < 19) and SDK will only log some messages in console specifying this.
+Your application should also have compileSdkVersion set to 25 or higher. Jukko SDK supports devices starting with Android 4.0 (API level 14). However, due to some older WebView version restrictions, ad UI won't be shown for Android prior to API level 19 and you will only be exposed to some some for the console messages.
 
 ### iOS Specific information
 
@@ -142,6 +142,7 @@ Jukko SDK support devices starting with iOS 10.0.
     ![](images/ios_drag_framework.png)
 
 4. Under the Build Settings find `Always Embed Swift Standard Libraries` (Xcode 8) and set it to Yes.
+
 
     ![](images/ios_embed_libraries.png)
 
