@@ -1,5 +1,4 @@
-> Jukko Unity `documentation
-> ==============================
+># Jukko Unity Documentation
 
 
 
@@ -7,13 +6,7 @@ Welcome to the Jukko developer SDK documentation. Follow our step-by-step instru
 integrate Jukko and start monetizing while converting your app into a catalyst for social
 impact today!
 
-
-
-If you have any questions during the integration process, you can reach us at [devs@jukko.com](mailto:devs@jukko.com)
-and we'll get back to you ASAP. Thanks for joining our movement to create a better world and
-a better way of doing business.
-
-
+If you have any questions during the integration process, you can reach us at [devs@jukko.com](mailto:devs@jukko.com) and we'll get back to you ASAP. Thanks for joining our movement to create a better world and a better way of doing business.
 
 
 ### Integration
