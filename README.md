@@ -1,4 +1,4 @@
-> Jukko Unity documentation
+> Jukko Unity `documentation
 > ==============================
 
 
@@ -15,7 +15,6 @@ a better way of doing business.
 
 
 
-[TOC]
 
 ### Integration
 1. **Download:** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.2.unitypackage).
