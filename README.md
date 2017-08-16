@@ -1,4 +1,4 @@
-> Jukko SDK documentation
+> Jukko Unity documentation
 > ==============================
 
 
