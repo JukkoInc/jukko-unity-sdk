@@ -1,6 +1,6 @@
 ># Jukko Unity Documentation
 
-
+![Jukko](http://res.cloudinary.com/jukko-dev/image/upload/v1503341726/GitHub_image_dxz5fk.png "Jukko Banner")
 
 Welcome to the Jukko developer SDK documentation. Follow our step-by-step instructions to
 integrate Jukko and start monetizing while converting your app into a catalyst for social
