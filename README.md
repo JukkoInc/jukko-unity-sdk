@@ -140,4 +140,44 @@ Jukko SDK support devices starting with iOS 10.0.
 
 5. Ensure that project's Deployment Target version is equal or above 10.0.
 
-6. Build and run the project on your device.
+6. Apple doesn't allow to publish applications with embedded frameworks containing binaries for simulator: i386, x86_64.
+To strip all used frameworks from those binaries:
+
+    1. Select `Build Phases`, add new `New Run Script Phase` and place it after `Embed Frameworks` phase.
+    2. Add script text or executable shell script.
+
+Script text:
+
+```
+APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+
+# This script loops through the frameworks embedded in the application and
+# removes unused architectures.
+find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
+do
+FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
+FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
+echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
+
+EXTRACTED_ARCHS=()
+
+for ARCH in $ARCHS
+do
+echo "Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME"
+lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
+EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
+done
+
+echo "Merging extracted architectures: ${ARCHS}"
+lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
+rm "${EXTRACTED_ARCHS[@]}"
+
+echo "Replacing original executable with thinned version"
+rm "$FRAMEWORK_EXECUTABLE_PATH"
+mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
+
+done
+
+```
+![](http://res.cloudinary.com/jukko-staging/image/upload/v1503509992/Screen_Shot_2017-08-23_at_12.39.21_PM_qxf2hf.png) 
+7. Build and run the project on your device.
