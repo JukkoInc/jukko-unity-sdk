@@ -10,7 +10,10 @@ If you have any questions during the integration process, you can reach us at [d
 
 
 ### Integration
-1. **Download:** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.2.unitypackage).
+1.a. **Download development SDK compatible with iOS Simulator + 25+ Android :** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.4-Sim.unitypackage).
+1.b. **Download minified SDK compatible with real devices iOS (arm7, arm7s, arm64) + 25+ Android :** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.4.unitypackage).
+
+
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package... ** and select `JukkoUnitySDK.unitypackage` file:
 
     ![](images/asset-import-1.png)
