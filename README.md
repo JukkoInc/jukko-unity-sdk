@@ -10,7 +10,7 @@ If you have any questions during the integration process, you can reach us at [d
 
 
 ### Integration
-1.a. Download Development SDK compatible with **iOS Simulator + Android Support :** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.4-Sim.unitypackage).
+1.a. Download Development SDK compatible with **iOS Simulator + Android Support :** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.4-Simulator.unitypackage).
 
 
 1.b. Download Minified SDK compatible with **real devices iOS (arm7, arm7s, arm64) + Android Support :** [Jukko Unity SDK](https://s3.amazonaws.com/jukkosdk/unity/JukkoUnitySDKProduction-2.0.4.unitypackage).
