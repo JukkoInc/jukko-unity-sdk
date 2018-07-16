@@ -38,18 +38,18 @@ need an API key. The API key can be generated in the dashboard after registratio
 You can register on the [Jukko dashboard](https://dashboard.jukko.com).
 
 ```csharp
-    JukkoSdk.Instance.Init ("YOUR_API_KEY");
+JukkoSdk.Instance.Init ("YOUR_API_KEY");
 ```
 
 In case You are building application for both Android and iOS, You should get separate keys for each platform.
 Initialization will look like following:
 
 ```csharp
-    #if UNITY_ANDROID
-    JukkoSdk.Instance.Init ("ANDROID_API_KEY");
-    #elif UNITY_IOS
-    JukkoSdk.Instance.Init ("IOS_API_KEY");
-    #endif
+#if UNITY_ANDROID
+JukkoSdk.Instance.Init ("ANDROID_API_KEY");
+#elif UNITY_IOS
+JukkoSdk.Instance.Init ("IOS_API_KEY");
+#endif
 ```
 
 ### Showing an ad
@@ -57,9 +57,9 @@ Initialization will look like following:
 You can show an ad by calling `ShowAd ()` method of Jukko SDK:
 
 ```csharp
-        JukkoSdk.Instance.ShowAd ((ShowAdResult result) => {
-            //handle ShowAdResult here
-        });
+JukkoSdk.Instance.ShowAd ((ShowAdResult result) => {
+    //handle ShowAdResult here
+});
 ```
 
 When ad UI is closed, `ShowAdResult` delegate will be called. It will contain an object with the following information:
@@ -85,7 +85,7 @@ Jukko SDK allows developer to set frequency capping for ads. It counts time sinc
 and ignores `ShowAd ()` calls until frequency capping period ends. Frequency capping can be changed using:
 
 ```csharp
-    JukkoSdk.Instance.AdsFrequency = timeInSeconds;
+JukkoSdk.Instance.AdsFrequency = timeInSeconds;
 ```
 
 ### Console logging
@@ -95,7 +95,7 @@ By default, Jukko SDK logs only important messages, like unrecoverable errors.
 You can enable debug logging to receive more logs with lifecycle details by calling:
 
 ```csharp
-    JukkoSdk.Instance.DebugMode = true;
+JukkoSdk.Instance.DebugMode = true;
 ```
 
 SDK will use native log messaging. Log messages will contain `Jukko SDK` tag.
