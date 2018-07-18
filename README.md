@@ -38,6 +38,10 @@ need an API key. The API key can be generated in the dashboard after registratio
 You can register on the [Jukko dashboard](https://dashboard.jukko.com).
 
 ```csharp
+using Jukko;
+
+// ...
+
 JukkoSdk.Instance.Init ("YOUR_API_KEY");
 ```
 
@@ -58,7 +62,7 @@ You can show an ad by calling `ShowAd ()` method of Jukko SDK:
 
 ```csharp
 JukkoSdk.Instance.ShowAd ((ShowAdResult result) => {
-    //handle ShowAdResult here
+    // handle ShowAdResult here
 });
 ```
 
