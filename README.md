@@ -110,7 +110,7 @@ SDK will use native log messaging. Log messages will contain `Jukko SDK` tag.
 If the user has Google Play services on their device, the SDK will automatically use user's
 Advertising ID (GAID) and Limit Ad Tracking setting.
 
-For more information about Google Advertising ID visit [this link](https://play.google.com/about/monetization-ads/ads/ad-id/).
+For more information about Google Advertising ID, visit [this link](https://play.google.com/about/monetization-ads/ads/ad-id/).
 
 ### Requirements
 
