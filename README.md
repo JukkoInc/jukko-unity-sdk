@@ -2,7 +2,7 @@
 
 ![Jukko](images/intro.png)
 
-Welcome to the Jukko developer SDK documentation. Follow our step-by-step instructions to
+Welcome to the Jukko developer SDK documentation for Unity. Follow our step-by-step instructions to
 integrate Jukko and start monetizing while converting your app into a catalyst for social
 impact today!
 
@@ -33,8 +33,7 @@ and we'll get back to you ASAP. Thanks for joining our movement to create a bett
 
 ### Initialization
 
-Initialization has to be done before Jukko SDK can be customized and launched. The method will
-need an API key. The API key can be generated in the dashboard after registration.
+Initialization has to be done before the Jukko SDK can be customized and launched. The method requires an API key. The API key can be generated in the dashboard after registration.
 You can register on the [Jukko dashboard](https://dashboard.jukko.com).
 
 ```csharp
@@ -45,7 +44,7 @@ using Jukko;
 JukkoSdk.Instance.Init ("YOUR_API_KEY");
 ```
 
-In case You are building application for both Android and iOS, You should get separate keys for each platform.
+In case You are building applications for both Android and iOS, you should get separate keys for each platform.
 Initialization will look like following:
 
 ```csharp
@@ -68,24 +67,24 @@ JukkoSdk.Instance.ShowAd ((ShowAdResult result) => {
 
 When ad UI is closed, `ShowAdResult` delegate will be called. It will contain an object with the following information:
 
-1. `Reason`: reason why the ad was closed. Possible values are:
+1. `Reason`: Reason why the ad was closed. Possible values are:
     * `ClosedByUser`: Ad view was closed by user.
-    * `Timeout`: Ad view  was closed due to server did not response within timeout.
+    * `Timeout`: Ad view  was closed due to server not responding within timeout window.
     * `NetworkConnectivity`: Ad view was closed due to network connectivity problems.
     * `FrequencyCapping`: Ads frequency capping is enabled and time period didn't pass since the last `ShowAd()` call.
     * `Error`: Ad view was closed due to unspecified error. Additional details will be provided in `Message`.
-2. `Message`: string containing additional information why activity was closed.
-3. `Events`: list of events that happened on ad view lifecycle. May be empty. Each event contains:
+2. `Message`: String containing additional information why activity was closed.
+3. `Events`: List of events that happened on ad view lifecycle. May be empty. Each event contains:
     * `timestamp` of the event in current device timezone.
     * `adEvent` type of event. Possible values:
         * `Launch`: Ad view was opened.
         * `Close`: Ad view was closed.
         * `AdShown`: Ad was shown to user.
-        * `AdUrlOpened`: user clicked on ad link that was opened in external browser.
+        * `AdUrlOpened`: User clicked on ad link that was opened in external browser.
 
 ### Frequency capping
 
-Jukko SDK allows developer to set frequency capping for ads. It counts time since the last time when an ad was closed
+Jukko SDK allows for setting frequency capping of ads. It counts time since the last time when an ad was closed
 and ignores `ShowAd ()` calls until frequency capping period ends. Frequency capping can be changed using:
 
 ```csharp
@@ -108,20 +107,20 @@ SDK will use native log messaging. Log messages will contain `Jukko SDK` tag.
 
 ### Google Play Services
 
-If user has Google Play services on their devices, SDK will automatically use user's
+If the user has Google Play services on their device, the SDK will automatically use user's
 Advertising ID (GAID) and Limit Ad Tracking setting.
 
 For more information about Google Advertising ID visit [this link](https://play.google.com/about/monetization-ads/ads/ad-id/).
 
 ### Requirements
 
-Your application should also have `compileSdkVersion` set to `25` or higher. Jukko SDK supports devices starting with Android 4.0 (API level 14). However, due to some older WebView version restrictions, ad UI won't be shown for Android prior to API level 19 and you will only be exposed to some some for the console messages.
+Your application should also have `compileSdkVersion` set to `25` or higher. The Jukko SDK supports devices starting with Android 4.0 (API level 14). However, due to some older WebView version restrictions, ad UI won't be shown for Android prior to API level 19 and you will only be exposed to some some for the console messages.
 
 ## iOS specific information
 
 ### Requirements
 
-Jukko SDK support devices starting with iOS 10.0.
+The Jukko SDK support devices starting with iOS 10.0.
 
 ### iOS project configuration
 
@@ -133,10 +132,10 @@ Jukko SDK support devices starting with iOS 10.0.
 
     ![iOS project configuration step 3](images/ios_drag_framework.png)
 
-4. Under the Build Settings find `Always Embed Swift Standard Libraries` (Xcode 8) and set it to Yes.
+4. Under the Build Settings find `Always Embed Swift Standard Libraries` (Xcode 8) and set it to `Yes`.
 
     ![iOS project configuration step 4](images/ios_embed_libraries.png)
 
-5. Ensure that project's Deployment Target version is equal or above 10.0.
+5. Ensure that project's Deployment Target version is equal to or above 10.0.
 
 6. Build and run the project on your device.
