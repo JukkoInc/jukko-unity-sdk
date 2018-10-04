@@ -11,7 +11,7 @@ and we'll get back to you ASAP. Thanks for joining our movement to create a bett
 
 ## Integration
 
-1. **Download:** [Jukko Unity SDK](https://sdk.jukko.com/unity/JukkoUnitySDK-1.0.5.unitypackage).
+1. **Download:** [Jukko Unity SDK](https://sdk.jukko.com/unity/JukkoUnitySDK-1.0.6.unitypackage).
 
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package...** and select `JukkoUnitySDK.unitypackage` file:
 
