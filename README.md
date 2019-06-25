@@ -11,7 +11,7 @@ and we'll get back to you ASAP. Thanks for joining our movement to create a bett
 
 ## Integration
 
-1. **Download:** [Jukko Unity SDK](https://sdk.jukko.com/unity/JukkoUnitySDK-1.0.6.unitypackage).
+1. **Download:** [Jukko Unity SDK](https://sdk.jukko.com/unity/JukkoUnitySDK-1.1.0.unitypackage).
 
 2. Open your project in the Unity Editor. Open **Assets - Import Package - Custom Package...** and select `JukkoUnitySDK.unitypackage` file:
 
@@ -41,8 +41,16 @@ using Jukko;
 
 // ...
 
-JukkoSdk.Instance.Init ("YOUR_API_KEY");
+JukkoSdk.Instance.Init ("YOUR_API_KEY", (OperationResult result) =>
+{
+    // handle Init result here
+});
 ```
+
+When initialization process is finished, `result` callback will be called. It will contain one of following values:
+
+* `Success`: initialization finished successfully.
+* `Failure`: initialization finished with failure.
 
 In case You are building applications for both Android and iOS, you should get separate keys for each platform.
 Initialization will look like following:
@@ -90,6 +98,34 @@ and ignores `ShowAd ()` calls until frequency capping period ends. Frequency cap
 ```csharp
 JukkoSdk.Instance.AdsFrequency = timeInSeconds;
 ```
+
+Set `0` to disable frequency capping.
+
+### User Info
+
+The Jukko SDK allows to provide information about user age and gender. It could be achieved using:
+
+```csharp
+JukkoSdk.Instance.SetUserInfo(age, gender, (OperationResult result) =>
+{
+    // handle SetUserInfo result here
+});
+```
+
+When user info setting is finished, `onResult` callback will be called. It will contain one of following values:
+
+* `Success`: user info setting finished successfully.
+* `Failure`: user info setting  finished with failure.
+
+### SDK initialization status
+
+The Jukko SDK provides methods to retrieve current status of SDK:
+
+```csharp
+bool initialized = JukkoSdk.Instance.Initialized;
+```
+
+This method will return `true` if SDK was initialized successfully, `false` otherwise.
 
 ### Console logging
 
