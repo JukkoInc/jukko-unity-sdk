@@ -185,7 +185,15 @@ The Jukko SDK support devices starting with iOS 10.0.
 4. Under the Build Settings find `Always Embed Swift Standard Libraries` (Xcode 8) and set it to `Yes`.
 
     ![iOS project configuration step 4](images/ios_embed_libraries.png)
+    
+    
 
 5. Ensure that project's Deployment Target version is equal to or above 10.0.
 
-6. Build and run the project on your device.
+6. `JukkoSdk.framework`is a universal framework. You need to strip other architectures before running an app. If you use Cocoapods no addittional setup is needed. Otherwise, add a Run Script to **Build Phases** after **Embed Frameworks** phase.
+
+	![iOS project configuration strip architectures](images/ios_strip_frameworks.png)
+	
+	[Script](scripts/ios_strip_frameworks.sh)
+
+7. Build and run the project on your device.
